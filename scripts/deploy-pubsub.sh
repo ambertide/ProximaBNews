@@ -8,4 +8,4 @@ source "${DIR}/.env.local"
 gcloud functions \
   deploy ${FUNCTION_NAME_PUBSUB} \
   --source=${SOURCE_DIR} \
-  --runtime=python39 \
+  --runtime=python39
