@@ -1,9 +1,7 @@
-#! /usr/bin/env bash
+#! /bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SOURCE_DIR="${DIR}/../src"
-
-source "${DIR}/.env.local"
 
 gcloud functions \
   deploy ${_FUNCTION_NAME_PUBSUB} \
