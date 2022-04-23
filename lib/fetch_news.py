@@ -76,12 +76,8 @@ def fetch_news(url: str, date: datetime) -> list[str]:
     Fetch the news from the wikipedia page and return the
         names.
     """
-    filename = date.strftime('%B_%Y')
-    if not isfile(f'page_cache/{filename}'):
-        # If the page isn't cached, cache it.
-        _fetch_page(url, filename)
-    with open(f'page_cache/{filename}') as file:
-        soup = BeautifulSoup(file, 'html.parser')
+    response = get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
     days_events = soup.find(id=date.strftime('%Y_%B_%d'))
     if not days_events or isinstance(days_events, NavigableString):
         return []
