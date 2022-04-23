@@ -1,5 +1,4 @@
 .twurlrc
 .env.bash
 venv
-page_cache
 **/__pycache__
