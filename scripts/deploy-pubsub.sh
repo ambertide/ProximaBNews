@@ -6,7 +6,7 @@ SOURCE_DIR="${DIR}/../src"
 source "${DIR}/.env.local"
 
 gcloud functions \
-  deploy ${FUNCTION_NAME_PUBSUB} \
-  --source=${SOURCE_DIR} \
+  deploy ${_FUNCTION_NAME_PUBSUB} \
+  --source=${_SOURCE_DIR} \
   --runtime=python39 \
-  --trigger-topic=${PUBSUB_TOPIC}
+  --trigger-topic=${_PUBSUB_TOPIC}
