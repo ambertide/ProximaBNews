@@ -31,8 +31,11 @@ def get_date() -> datetime:
     return datetime.now() - relativedelta(days=1533)
 
 
-if __name__ == '__main__':
+def tweet_news() -> None:
     date = get_date()
     url = fetch_news_page_url(get_date())
     news = fetch_news(url, date)
     send_news(news, url, date)
+
+if __name__ == '__main__':
+    tweet_news()
